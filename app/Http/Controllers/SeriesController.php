@@ -4,18 +4,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class SeriesController extends Controller{
-    public function index(){
+
+
+    public function index(Request $request){
+        //return $request->url();
+        //return redirect ('https://youtube.com');
+
         $series = [
             'breaking-Bad',
             'Icaly',
             'Suits'
         ];
-        $html = '<ul>';
-        foreach($series as $serie){
-            $html .= "<li>$serie</li>";
-        }
-        $html .= '</ul>';
 
-        print $html;
+        return view('series.index' ) -> with('series', $series);
+    }
+    public function create(){
+        return view('series.create');
     }
 }
