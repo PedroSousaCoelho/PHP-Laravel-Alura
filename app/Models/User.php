@@ -43,3 +43,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 }
+
+class Serie extends Model {
+    use HasFactory;
+    protected $fillable = ['nome'];
+}
